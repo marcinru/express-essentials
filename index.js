@@ -15,8 +15,16 @@ app.use(express.static('public'));
 // http://localhost:3000/images/mountains_2.jpeg
 app.use('/images', express.static('images'));
 
+app.get('/download', (req, res) => {
+  res.download('images/mountains_2.jpeg');
+});
+
 app.get('/', (req, res) => {
   res.json(data);
+});
+
+app.get('/redirect', (req, res) => {
+  res.redirect('https://www.linkedin.com');
 });
 
 app.get(

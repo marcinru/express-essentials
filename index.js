@@ -19,6 +19,12 @@ app.get('/', (req, res) => {
   res.json(data);
 });
 
+app.get('/class/:id', (req, res) => {
+  const studentId = Number(req.params.id);
+  const student = data.filter((stu) => stu.id === studentId);
+  res.send(student);
+});
+
 app.post('/create', (req, res) => {
   res.send('This is a POST request at /create endpoint');
 });
@@ -33,5 +39,4 @@ app.delete('/delete', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`The server is running on port ${PORT}`);
-  console.log(data);
 });

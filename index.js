@@ -10,7 +10,7 @@ const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-  res.send('This is a GET request at / endpoint');
+  res.json(data);
 });
 
 app.post('/create', (req, res) => {

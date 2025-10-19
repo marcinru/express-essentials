@@ -27,6 +27,18 @@ app.get('/redirect', (req, res) => {
   res.redirect('https://www.linkedin.com');
 });
 
+app
+  .route('/class')
+  .get((req, res) => {
+    res.send('This is a GET request at /class endpoint');
+  })
+  .post((req, res) => {
+    res.send('This is a POST request at /class endpoint');
+  })
+  .put((req, res) => {
+    res.send('This is a PUT request at /class endpoint');
+  });
+
 app.get(
   '/next',
   (req, res, next) => {

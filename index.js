@@ -9,6 +9,12 @@ const app = express();
 
 const PORT = 3000;
 
+// http://localhost:3000/mountains_1.jpeg
+app.use(express.static('public'));
+
+// http://localhost:3000/images/mountains_2.jpeg
+app.use('/images', express.static('images'));
+
 app.get('/', (req, res) => {
   res.json(data);
 });

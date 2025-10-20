@@ -15,7 +15,8 @@ app.use(express.static('public'));
 // http://localhost:3000/images/mountains_2.jpeg
 app.use('/images', express.static('images'));
 
-app.use(express.json());
+// for Content-Type application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 app.post('/item', (req, res) => {
   console.log(req.body);
   res.send(req.body);

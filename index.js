@@ -15,6 +15,12 @@ app.use(express.static('public'));
 // http://localhost:3000/images/mountains_2.jpeg
 app.use('/images', express.static('images'));
 
+app.use(express.json());
+app.post('/item', (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+});
+
 app.get('/download', (req, res) => {
   res.download('images/mountains_2.jpeg');
 });

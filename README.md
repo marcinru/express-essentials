@@ -9,3 +9,6 @@ for learning Express from the [essentials course at LinkedIn](https://www.linked
 
 ## to stop the server press
 `ctrl + C`
+
+## to debug in powershell
+`npm run debug`

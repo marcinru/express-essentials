@@ -37,7 +37,8 @@ app.get('/redirect', (req, res) => {
 app
   .route('/class')
   .get((req, res) => {
-    res.send('This is a GET request at /class endpoint');
+    // res.send('This is a GET request at /class endpoint');
+    throw new Error();
   })
   .post((req, res) => {
     res.send('This is a POST request at /class endpoint');
@@ -73,6 +74,11 @@ app.put('/edit', (req, res) => {
 
 app.delete('/delete', (req, res) => {
   res.send('This is a DELETE request at /delete endpoint');
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something is broken!');
 });
 
 app.listen(PORT, () => {
